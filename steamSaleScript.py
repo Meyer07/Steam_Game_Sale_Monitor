@@ -133,29 +133,18 @@ class PricePredictor:
             if notiConfig.get('sms'):
                 self.sendSMS_via_Email(gameInfo, notiConfig['sms'])
         else:
-            print("ℹ️ No sale or price not low enough yet")
+            print("No sale or price not low enough yet")
 
+
+from config import EMAILCONFIG, SMSCONFIG 
 if __name__=="__main__":
         steamAppID="1151340"
         TARGETPRICE="39.99"
 
 
-        EMAIL_CONFIG={
-            'from_email': 'your_email@gmail.com',
-            'to_email': 'recipient@gmail.com',
-            'password': 'your_app_password'
-        }
-
-        SMS_CONFIG={
-            'phone number':'9206210069',
-            'carrier':'cellcom',
-            'from_email':'smeyer1@new.rr.com',
-            'password':'Venture314!'
-        }
-
         NOTI_CONFIG={
-            'email':EMAIL_CONFIG,
-            'sms':SMS_CONFIG
+            'email':EMAILCONFIG,
+            'sms':SMSCONFIG
         }
 
 
