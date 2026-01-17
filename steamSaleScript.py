@@ -212,10 +212,11 @@ def checkWishList(wishlist, NOTI_CONFIG, targetPrice=None):
             if not gameInfo:
                 print(f"⚠️  Could not fetch info for App ID: {appId}")
                 continue
+            print(f"📊 {gameInfo['name']}")
+            print(f"   Price: ${gameInfo['price']:.2f}")
+            print(f"   On Sale: {'✅ Yes' if gameInfo['on_sale'] else '❌ No'}")
             
-        print(f"📊 {gameInfo['name']}")
-        print(f"   Price: ${gameInfo['price']:.2f}")
-        print(f"   On Sale: {'✅ Yes' if gameInfo['on_sale'] else '❌ No'}")    
+           
 
         notify = False  
         if gameInfo['on_sale']:
@@ -251,7 +252,7 @@ if __name__=="__main__":
             "1817190",
             "381210",
             "729040",
-            "2183900"
+            #"2183900"
         ]
 
         TARGETPRICE=None
