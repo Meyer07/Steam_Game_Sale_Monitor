@@ -219,9 +219,8 @@ def checkWishList(wishlist, NOTI_CONFIG, targetPrice=None):
             if gameInfo['on_sale']:
                 if targetPrice is None:
                     notify = True  
-            elif gameInfo['price'] <= targetPrice:
-                notify = True  
-    
+            elif targetPrice is not None and gameInfo['price'] <= targetPrice:
+                notify = True 
             if notify:
                 gameInfo['app_id'] = appId 
                 salesFound.append(gameInfo)
@@ -249,7 +248,11 @@ if __name__=="__main__":
             "1817190",
             "381210",
             "729040",
-            #"2183900"
+            "3159330",
+            "812140",
+            "2208920",
+            "3035570",
+            "242050",
         ]
 
         TARGETPRICE=None
