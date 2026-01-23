@@ -188,7 +188,7 @@ def sendWishlistNotif(sales,NOTI_CONFIG):
                     sms_msg['From'] = NOTI_CONFIG['sms']['from_email']
                     sms_msg['To'] = to_address
                 
-                    with smtplib.SMTP('mail.twc', 587) as server:
+                    with smtplib.SMTP('mail.twc.com', 587) as server:
                         server.starttls()
                         server.login(NOTI_CONFIG['sms']['from_email'],NOTI_CONFIG['sms']['password'])
                         server.send_message(sms_msg)
@@ -215,22 +215,19 @@ def checkWishList(wishlist, NOTI_CONFIG, targetPrice=None):
             print(f"📊 {gameInfo['name']}")
             print(f"   Price: ${gameInfo['price']:.2f}")
             print(f"   On Sale: {'✅ Yes' if gameInfo['on_sale'] else '❌ No'}")
-            
-           
-
-        notify = False  
-        if gameInfo['on_sale']:
-            if targetPrice is None:
-                notify = True  
+            notify = False  
+            if gameInfo['on_sale']:
+                if targetPrice is None:
+                    notify = True  
             elif gameInfo['price'] <= targetPrice:
                 notify = True  
     
-        if notify:
-            gameInfo['app_id'] = appId 
-            salesFound.append(gameInfo)
-            print(f"   🎉 SALE DETECTED! {gameInfo['discount_percent']}% off!")
+            if notify:
+                gameInfo['app_id'] = appId 
+                salesFound.append(gameInfo)
+                print(f"   🎉 SALE DETECTED! {gameInfo['discount_percent']}% off!")
         
-        print()  # Blank line between games
+        print()  
 
        
         if salesFound:  # Check if list is not empty
