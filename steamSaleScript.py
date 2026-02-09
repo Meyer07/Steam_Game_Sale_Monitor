@@ -79,7 +79,7 @@ class PricePredictor:
             'att': 'txt.att.net',
             'sprint': 'messaging.sprintpcs.com',
             'boost': 'smsmyboostmobile.com',
-            'cellcom':'smscellcom.com'
+            'cellcom':'cellcom.quiktxt.com'
         }
 
         try:
@@ -177,7 +177,7 @@ def sendWishlistNotif(sales,NOTI_CONFIG):
                     'verizon': 'vtext.com',
                     'tmobile': 'tmomail.net',
                     'att': 'txt.att.net',
-                    'cellcom': 'sms.cellcom.com'
+                    'cellcom': 'cellcom.quiktxt.com'
             }
             
                 carrier_domain = carriers.get(NOTI_CONFIG['sms']['carrier'].lower())
