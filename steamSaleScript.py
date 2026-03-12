@@ -241,7 +241,6 @@ from config import EMAILCONFIG, SMSCONFIG
 if __name__=="__main__":
         wishList=[
             "1174180",
-            "1151340",
             "2362050",
             "1817070",
             "2651280",
