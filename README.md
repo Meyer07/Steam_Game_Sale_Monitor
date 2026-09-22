@@ -1,1 +1,13 @@
-This program is a program that takes a wishlist of steam games and searches for if they're on sale and when combined with most os systems running of crontab can be done automatically with the machine running it through its directory. I made this because I wanted to make something that could not only be practical for me as a gamer but also something that would look pretty cool on a resume oneday. Will add code documentation one day but for now it is 2:30 am and I must reset
+This program is a program that takes a wishlist of steam games and searches for if they're on sale and when combined with most os systems running of crontab can be done automatically with the machine running it through its directory. I made this because I wanted to make something that could not only be practical for me as a gamer but also something that would look pretty cool on a resume oneday. Will add code
+ documentation one day but for now it is 2:30 am and I must reset
+
+to run in terminal 
+
+activate the virtual environment 
+
+python3 -m venv venv
+
+source venv/bin/activate
+
+python3 steamSaleScript.py
+
